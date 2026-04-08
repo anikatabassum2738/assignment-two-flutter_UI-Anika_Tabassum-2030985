@@ -4,34 +4,42 @@ class Header extends StatelessWidget {
   const Header({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           children: [
-             Container(
+            Container(
               padding: const EdgeInsets.all(2),
               decoration: BoxDecoration(
                 color: const Color(0xFF7B7DF4),
                 shape: BoxShape.circle,
               ),
               child: CircleAvatar(
-                radius: 18,
+                radius: 14,
                 backgroundColor: const Color(0xFF3B3EE8),
-                child: const Text("A", style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                child: const Text(
+                  "A",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
-                  ),
+                ),
               ),
             ),
-            const SizedBox(width: 12.0),
+            const SizedBox(width: 8.0),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text("Welcome back,", style: TextStyle(color: Color(0xFF9E9E9E), fontSize: 12.0)),
-                Text("ANIKA TABASSUM", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
+                Text(
+                  "Welcome back,",
+                  style: TextStyle(color: Color(0xFF9E9E9E), fontSize: 10.0),
+                ),
+                Text(
+                  "ANIKA TABASSUM",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.0),
+                ),
               ],
             ),
           ],
@@ -39,7 +47,7 @@ class Header extends StatelessWidget {
         Stack(
           children: [
             Container(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.grey[300],
                 shape: BoxShape.circle,
@@ -47,7 +55,7 @@ class Header extends StatelessWidget {
               child: const Icon(
                 Icons.notifications_none_outlined,
                 color: Color(0xFF4A5568),
-                size: 24.0,
+                size: 16.0,
               ),
             ),
             Positioned(

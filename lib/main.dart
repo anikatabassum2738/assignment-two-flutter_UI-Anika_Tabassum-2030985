@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'profile_page.dart';
 import 'widgets/header.dart';
+import 'reports_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class _MainNavigationWrapperState extends State<MainNavigationWrapper> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const Center(child: Text("Reports Page")),
+    const ReportsPage(),
     const Center(child: Text("Cards Page")),
     const ProfilePage(),
   ];

@@ -25,7 +25,6 @@ class ProfilePage extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  // The Profile Avatar with a soft shadow
                   Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,

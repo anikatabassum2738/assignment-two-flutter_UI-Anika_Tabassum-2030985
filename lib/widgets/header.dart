@@ -17,7 +17,7 @@ class Header extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: CircleAvatar(
-                radius: 14,
+                radius: 16,
                 backgroundColor: const Color(0xFF3B3EE8),
                 child: const Text(
                   "A",
@@ -55,7 +55,7 @@ class Header extends StatelessWidget {
               child: const Icon(
                 Icons.notifications_none_outlined,
                 color: Color(0xFF4A5568),
-                size: 16.0,
+                size: 18.0,
               ),
             ),
             Positioned(

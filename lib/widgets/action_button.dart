@@ -10,10 +10,10 @@ class ActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
             color: Colors.grey,
@@ -25,18 +25,18 @@ class ActionButton extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.all(6),
+            padding: const EdgeInsets.all(10),
             decoration: const BoxDecoration(
               color: Color(0xFFE8EAF6),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: const Color(0xFF5D5FEF), size: 20),
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: 10),
           Text(
             label,
             style: const TextStyle(
-              fontSize: 12,
+              fontSize: 14,
               fontWeight: FontWeight.w500,
               color: Color(0xFF4A5568),
             ),

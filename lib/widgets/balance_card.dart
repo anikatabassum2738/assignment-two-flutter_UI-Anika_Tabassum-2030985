@@ -7,10 +7,10 @@ class BalanceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(20.0),
       decoration: BoxDecoration(
         color: const Color(0xFF3B3EE8),
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(16.0),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,7 +20,7 @@ class BalanceCard extends StatelessWidget {
             children: const [
               Text(
                 "Total Balance",
-                style: TextStyle(color: Colors.white70, fontSize: 10),
+                style: TextStyle(color: Colors.white70, fontSize: 12),
               ),
               Icon(
                 Icons.account_balance_wallet_outlined,
@@ -35,7 +35,7 @@ class BalanceCard extends StatelessWidget {
             "\$8,945.32",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 26,
+              fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -45,11 +45,11 @@ class BalanceCard extends StatelessWidget {
             children: const [
               Text(
                 "Savings: \$5,500",
-                style: TextStyle(color: Colors.white, fontSize: 10),
+                style: TextStyle(color: Colors.white, fontSize: 12),
               ),
               Text(
                 "Last 30 days: +\$300 →",
-                style: TextStyle(color: Colors.white, fontSize: 10),
+                style: TextStyle(color: Colors.white, fontSize: 12),
               ),
             ],
           ),

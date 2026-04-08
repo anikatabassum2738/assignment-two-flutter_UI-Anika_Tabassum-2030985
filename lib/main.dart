@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/header.dart';
-import 'widgets/balance_card.dart';
-import 'widgets/action_button.dart';
-import 'widgets/transaction_tile.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,114 +12,81 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  const Header(),
-                  const SizedBox(height: 20),
-                  const BalanceCard(),
+      theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFF8F9FB)),
+      home: const MainNavigationWrapper(),
+    );
+  }
+}
 
-                  const SizedBox(height: 20),
+class MainNavigationWrapper extends StatefulWidget {
+  const MainNavigationWrapper({super.key});
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: ActionButton(
-                          icon: Icons.swap_vert_rounded,
-                          label: "Transfer",
-                        ),
-                      ),
+  @override
+  State<MainNavigationWrapper> createState() => _MainNavigationWrapperState();
+}
 
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: ActionButton(
-                          icon: Icons.account_balance_wallet_outlined,
-                          label: "Pay Bills",
-                        ),
-                      ),
-                      const SizedBox(width: 12),
+class _MainNavigationWrapperState extends State<MainNavigationWrapper> {
+  int _selectedIndex = 0;
 
-                      Expanded(
-                        child: ActionButton(
-                          icon: Icons.link_rounded,
-                          label: "Invest",
-                        ),
-                      ),
-                    ],
-                  ),
+  final List<Widget> _pages = [
+    const HomePage(),
+    const Center(child: Text("Reports Page")),
+    const Center(child: Text("Cards Page")),
+    const Center(child: Text("Profile Page")),
+  ];
 
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text(
-                              "Recent Transactions",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF1A1D1E),
-                              ),
-                            ),
-                            Text(
-                              "View All",
-                              style: TextStyle(
-                                color: Color(0xFF5D5FEF),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 10),
-                        const TransactionTile(
-                          title: "Netflix Subscription",
-                          subTitle: "Entertainment • Today",
-                          price: "\$19.99",
-                          priceColor: Color(0xFFFF5C5C),
-                          icon: Icons.movie_outlined,
-                        ),
-                        const TransactionTile(
-                          title: "Coffee Shop",
-                          subTitle: "Food & Drink • Today",
-                          price: "\$4.50",
-                          priceColor: Color(0xFFFF5C5C),
-                          icon: Icons.coffee_outlined,
-                        ),
-                        const TransactionTile(
-                          title: "Salary Deposit",
-                          subTitle: "Income • Yesterday",
-                          price: "+\$3500.00",
-                          priceColor: Color(0xFF32BC71),
-                          icon: Icons.wallet_outlined,
-                        ),
-                        const TransactionTile(
-                          title: "Grocery Store",
-                          subTitle: "Shopping • Yesterday",
-                          price: "\$55.80",
-                          priceColor: Color(0xFFFF5C5C),
-                          icon: Icons.shopping_cart_outlined,
-                        ),
-                        const TransactionTile(
-                          title: "Amazon Purchase",
-                          subTitle: "Shopping • 2 days ago",
-                          price: "\$120.45",
-                          priceColor: Color(0xFFFF5C5C),
-                          icon: Icons.shopping_bag_outlined,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+          boxShadow: [
+            BoxShadow(color: Colors.black12, blurRadius: 10, spreadRadius: 1),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+          child: BottomNavigationBar(
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.white,
+            selectedItemColor: const Color(0xFF5D5FEF),
+            unselectedItemColor: Colors.grey,
+            showUnselectedLabels: true,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home_filled),
+                label: "Home",
               ),
-            ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.bar_chart),
+                label: "Reports",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.credit_card),
+                label: "Cards",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: "Profile",
+              ),
+            ],
           ),
         ),
       ),

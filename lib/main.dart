@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/header.dart';
+import 'widgets/balance_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,8 @@ class MyApp extends StatelessWidget {
             child: Column(
               children: const [
                 Header(),
+                SizedBox(height: 25),
+                BalanceCard(),
               ],
             ),
           ),

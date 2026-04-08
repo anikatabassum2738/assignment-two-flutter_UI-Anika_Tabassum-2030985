@@ -18,7 +18,7 @@ class Header extends StatelessWidget {
               ),
               child: CircleAvatar(
                 radius: 18,
-                backgroundColor: const Color(0xFF5D5FEF),
+                backgroundColor: const Color(0xFF3B3EE8),
                 child: const Text("A", style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -30,7 +30,7 @@ class Header extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text("Welcome back,", style: TextStyle(color: Colors.grey, fontSize: 12.0)),
+                Text("Welcome back,", style: TextStyle(color: Color(0xFF9E9E9E), fontSize: 12.0)),
                 Text("ANIKA TABASSUM", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
               ],
             ),
@@ -41,7 +41,7 @@ class Header extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
-                color: Colors.grey[100],
+                color: Colors.grey[300],
                 shape: BoxShape.circle,
               ),
               child: const Icon(

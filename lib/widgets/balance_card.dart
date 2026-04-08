@@ -29,7 +29,7 @@ class BalanceCard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 8.0),
+          const SizedBox(height: 4.0),
 
           const Text(
             "\$8,945.32",

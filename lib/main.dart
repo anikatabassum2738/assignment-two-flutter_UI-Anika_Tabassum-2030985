@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+import 'profile_page.dart';
+import 'widgets/header.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +34,7 @@ class _MainNavigationWrapperState extends State<MainNavigationWrapper> {
     const HomePage(),
     const Center(child: Text("Reports Page")),
     const Center(child: Text("Cards Page")),
-    const Center(child: Text("Profile Page")),
+    const ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -44,11 +46,22 @@ class _MainNavigationWrapperState extends State<MainNavigationWrapper> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
+      body: SafeArea(
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+              child: Header(),
+            ),
+
+            Expanded(child: _pages[_selectedIndex]),
+          ],
+        ),
+      ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30),
             topRight: Radius.circular(30),
           ),

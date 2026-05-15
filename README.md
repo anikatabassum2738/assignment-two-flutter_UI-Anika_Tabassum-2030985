@@ -1,4 +1,4 @@
-# student_finance_app
+# Personal Finance Tracker App
 
 A new Flutter project.
 
